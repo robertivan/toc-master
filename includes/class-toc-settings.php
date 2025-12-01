@@ -4,10 +4,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class TOC_Master_Settings {
+class TBRV_Settings {
 
-	private $option_group = 'toc_master_settings_group';
-	private $option_name  = 'toc_master_options';
+	private $option_group = 'tbrv_settings_group';
+	private $option_name  = 'tbrv_options';
 
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'add_admin_menu' ) );
@@ -18,10 +18,10 @@ class TOC_Master_Settings {
 	public function add_admin_menu() {
 		// Main menu item
 		add_menu_page(
-			'TOC Master',                    // Page title
-			'TOC Master',                    // Menu title
+			'TOC Builder by RobertIvan',     // Page title
+			'TOC Builder',                   // Menu title
 			'manage_options',                // Capability
-			'toc-master',                    // Menu slug
+			'tbrv',                          // Menu slug
 			array( $this, 'render_general_page' ),  // Callback
 			'dashicons-list-view',           // Icon
 			30                               // Position
@@ -29,41 +29,41 @@ class TOC_Master_Settings {
 
 		// Submenu: General Settings (default)
 		add_submenu_page(
-			'toc-master',
+			'tbrv',
 			'General Settings',
 			'General',
 			'manage_options',
-			'toc-master',
+			'tbrv',
 			array( $this, 'render_general_page' )
 		);
 
 		// Submenu: Appearance
 		add_submenu_page(
-			'toc-master',
+			'tbrv',
 			'Appearance Settings',
 			'Appearance',
 			'manage_options',
-			'toc-master-appearance',
+			'tbrv-appearance',
 			array( $this, 'render_appearance_page' )
 		);
 
 		// Submenu: Advanced
 		add_submenu_page(
-			'toc-master',
+			'tbrv',
 			'Advanced Settings',
 			'Advanced',
 			'manage_options',
-			'toc-master-advanced',
+			'tbrv-advanced',
 			array( $this, 'render_advanced_page' )
 		);
 
 		// Submenu: Premium
 		add_submenu_page(
-			'toc-master',
+			'tbrv',
 			'Premium Features',
 			'Premium',
 			'manage_options',
-			'toc-master-premium',
+			'tbrv-premium',
 			array( $this, 'render_premium_page' )
 		);
 	}
@@ -71,22 +71,22 @@ class TOC_Master_Settings {
     public function enqueue_admin_scripts( $hook ) {
         // Check if we're on any of our admin pages
         $our_pages = array(
-            'toplevel_page_toc-master',
-            'toc-master_page_toc-master-appearance',
-            'toc-master_page_toc-master-advanced',
-            'toc-master_page_toc-master-premium'
+            'toplevel_page_tbrv',
+            'tbrv_page_tbrv-appearance',
+            'tbrv_page_tbrv-advanced',
+            'tbrv_page_tbrv-premium'
         );
         
         if ( ! in_array( $hook, $our_pages ) ) {
             return;
         }
         
-        wp_enqueue_style( 'toc-master-style', TOC_MASTER_URL . 'assets/css/style.css', array(), TOC_MASTER_VERSION );
-        wp_enqueue_style( 'toc-master-admin-premium', TOC_MASTER_URL . 'assets/css/admin-premium.css', array(), TOC_MASTER_VERSION );
+        wp_enqueue_style( 'tbrv-style', TBRV_URL . 'assets/css/style.css', array(), TBRV_VERSION );
+        wp_enqueue_style( 'tbrv-admin-premium', TBRV_URL . 'assets/css/admin-premium.css', array(), TBRV_VERSION );
         
         // Enqueue JavaScript only for General page (needs live preview)
-        if ( $hook === 'toplevel_page_toc-master' ) {
-            wp_enqueue_script( 'toc-master-admin', TOC_MASTER_URL . 'assets/js/admin-settings.js', array(), TOC_MASTER_VERSION, true );
+        if ( $hook === 'toplevel_page_tbrv' ) {
+            wp_enqueue_script( 'tbrv-admin', TBRV_URL . 'assets/js/admin-settings.js', array(), TBRV_VERSION, true );
         }
     }
 
@@ -94,18 +94,18 @@ class TOC_Master_Settings {
 		register_setting( $this->option_group, $this->option_name, array( $this, 'sanitize_settings' ) );
 
 		add_settings_section(
-			'toc_master_general_section',
+			'tbrv_general_section',
 			'General Settings',
 			null,
-			'toc-master-settings'
+			'tbrv-settings'
 		);
 
 		add_settings_field(
 			'enable_toc',
 			'Enable TOC',
 			array( $this, 'render_checkbox_field' ),
-			'toc-master-settings',
-			'toc_master_general_section',
+			'tbrv-settings',
+			'tbrv_general_section',
 			array( 'id' => 'enable_toc', 'label' => 'Enable Table of Contents automatically' )
 		);
 
@@ -113,17 +113,17 @@ class TOC_Master_Settings {
 			'headings',
 			'Headings to Include',
 			array( $this, 'render_headings_field' ),
-			'toc-master-settings',
-			'toc_master_general_section',
+			'tbrv-settings',
+			'tbrv_general_section',
 			array( 'id' => 'headings' )
 		);
 
-		add_settings_field(
+			add_settings_field(
 			'position',
 			'Position',
 			array( $this, 'render_select_field' ),
-			'toc-master-settings',
-			'toc_master_general_section',
+			'tbrv-settings',
+			'tbrv_general_section',
 			array(
 				'id' => 'position',
 				'options' => array(
@@ -138,8 +138,8 @@ class TOC_Master_Settings {
 			'smooth_scroll',
 			'Smooth Scroll',
 			array( $this, 'render_checkbox_field' ),
-			'toc-master-settings',
-			'toc_master_general_section',
+			'tbrv-settings',
+			'tbrv_general_section',
 			array( 'id' => 'smooth_scroll', 'label' => 'Enable Smooth Scroll' )
 		);
         
@@ -147,8 +147,8 @@ class TOC_Master_Settings {
 			'collapsible',
 			'Collapsible',
 			array( $this, 'render_checkbox_field' ),
-			'toc-master-settings',
-			'toc_master_general_section',
+			'tbrv-settings',
+			'tbrv_general_section',
 			array( 'id' => 'collapsible', 'label' => 'Allow users to collapse TOC' )
 		);
 	}
@@ -171,12 +171,12 @@ class TOC_Master_Settings {
 
 	public function render_general_page() {
 		?>
-		<div class="toc-master-settings-wrap">
+		<div class="tbrv-settings-wrap">
 			<!-- Premium Header -->
 			<div class="toc-premium-header">
 				<h1>
 					<span class="toc-header-icon">⚡</span>
-					TOC Master					
+					TOC Builder by RobertIvan					
 				</h1>
 				<p>Configure the complete Table of Contents experience</p>
 			</div>
@@ -307,7 +307,7 @@ class TOC_Master_Settings {
 									<h4>👁️ Live Preview</h4>
 									<p>Preview in real-time how the Table of Contents will look</p>
 								</div>
-								<div class="toc-master-preview">
+								<div class="tbrv-preview">
 									<!-- Preview will be injected by JavaScript -->
 								</div>
 							</div>
@@ -321,7 +321,7 @@ class TOC_Master_Settings {
 
 	public function render_appearance_page() {
 		?>
-		<div class="toc-master-settings-wrap">
+		<div class="tbrv-settings-wrap">
 			<div class="toc-premium-header">
 				<h1>
 					<span class="toc-header-icon">🎨</span>
@@ -373,7 +373,7 @@ class TOC_Master_Settings {
 
 	public function render_advanced_page() {
 		?>
-		<div class="toc-master-settings-wrap">
+		<div class="tbrv-settings-wrap">
 			<div class="toc-premium-header">
 				<h1>
 					<span class="toc-header-icon">🚀</span>
@@ -425,7 +425,7 @@ class TOC_Master_Settings {
 
 	public function render_premium_page() {
 		?>
-		<div class="toc-master-settings-wrap">
+		<div class="tbrv-settings-wrap">
 			<div class="toc-premium-header">
 				<h1>
 					<span class="toc-header-icon">💎</span>

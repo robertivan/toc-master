@@ -1,10 +1,10 @@
-=== TOC Master ===
+=== TOC Builder by RobertIvan ===
 Contributors: robertivan
 Tags: table of contents, toc, navigation, headings, gutenberg
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ A Table of Contents generator for WordPress with admin interface.
 
 == Description ==
 
-TOC Master is a Table of Contents plugin that automatically generates a navigation menu from your content's headings. It includes an admin interface for configuration and is suitable for long-form content, documentation sites, and blogs.
+TOC Builder by RobertIvan is a Table of Contents plugin that automatically generates a navigation menu from your content's headings. It includes an admin interface for configuration and is suitable for long-form content, documentation sites, and blogs.
 
 = Core Features =
 
@@ -26,7 +26,7 @@ TOC Master is a Table of Contents plugin that automatically generates a navigati
 
 = Admin Interface =
 
-TOC Master features an admin settings page for configuration:
+TOC Builder by RobertIvan features an admin settings page for configuration:
 
 **Design System**
 
@@ -79,20 +79,20 @@ The admin interface is designed to accommodate upcoming features:
 
 1. Log in to your WordPress admin panel
 2. Navigate to Plugins → Add New
-3. Search for "TOC Master"
+3. Search for "TOC Builder by RobertIvan"
 4. Click "Install Now" and then "Activate"
-5. Navigate to TOC Master in the WordPress sidebar to configure
+5. Navigate to TOC Builder in the WordPress sidebar to configure
 
 = Manual Installation =
 
 1. Download the plugin ZIP file
 2. Upload the `toc-master` folder to the `/wp-content/plugins/` directory
 3. Activate the plugin through the 'Plugins' menu in WordPress
-4. Navigate to TOC Master in the WordPress sidebar to configure the plugin
+4. Navigate to TOC Builder in the WordPress sidebar to configure the plugin
 
 = After Activation =
 
-1. Go to TOC Master in the WordPress sidebar
+1. Go to TOC Builder in the WordPress sidebar
 2. Enable the Table of Contents
 3. Select which heading levels to include (H1-H6)
 4. Choose where to display the TOC (before/after first heading, or top of content)
@@ -105,7 +105,7 @@ The TOC will appear automatically on posts and pages (if enabled) or you can use
 
 = How does the plugin work? =
 
-TOC Master automatically scans your post or page content for HTML heading tags (H1 through H6) and generates a navigational Table of Contents. It adds unique IDs to each heading so users can jump directly to sections.
+TOC Builder by RobertIvan automatically scans your post or page content for HTML heading tags (H1 through H6) and generates a navigational Table of Contents. It adds unique IDs to each heading so users can jump directly to sections.
 
 = Can I exclude specific headings? =
 
@@ -118,9 +118,9 @@ Yes. It works with any content that uses standard HTML heading tags (`<h1>` to `
 = How do I manually insert the TOC? =
 
 You have three options:
-1. Enable automatic insertion in TOC Master settings
+1. Enable automatic insertion in TOC Builder settings
 2. Use the `[toc]` shortcode anywhere in your content
-3. Use the "TOC Master" block in the Gutenberg editor
+3. Use the "TOC Builder" block in the Gutenberg editor
 
 = Can I customize the appearance? =
 
@@ -128,7 +128,7 @@ The current version includes basic styling. Advanced appearance customization op
 
 = Is it compatible with my theme? =
 
-Yes. TOC Master is designed to work with any WordPress theme that follows standard WordPress coding practices.
+Yes. TOC Builder by RobertIvan is designed to work with any WordPress theme that follows standard WordPress coding practices.
 
 = Does it affect my site's performance? =
 
@@ -145,9 +145,14 @@ Yes. This plugin is licensed under GPLv2, which allows you to use it on as many 
 3. Heading selectors (H1-H6) with clickable areas
 4. Collapsible TOC preview with interactive hide/show functionality
 5. Mobile-responsive layout with stacked settings and preview
-6. WordPress sidebar menu with TOC Master icon
+6. WordPress sidebar menu with TOC Builder icon
 
 == Changelog ==
+
+= 1.2.1 =
+* Changed: All functions, classes, and hooks prefixed with tbrv_ to prevent conflicts
+* Changed: All CSS classes renamed to .tbrv-* for consistency
+* Improved: WordPress coding standards compliance with unique prefixes throughout
 
 = 1.2.0 =
 * Added: WordPress sidebar menu with icon and structure
@@ -212,7 +217,7 @@ toc-master/
 │   ├── class-toc-generator.php    (Core TOC generation logic)
 │   ├── class-toc-settings.php     (Settings page with UI)
 │   └── class-toc-block.php        (Gutenberg block registration)
-└── toc-master.php                 (Main plugin file)
+└── toc-builder.php                (Main plugin file)
 
 = Admin Interface Architecture =
 

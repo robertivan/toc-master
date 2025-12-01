@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     // Toggle Functionality
-    const toggleLink = document.querySelector('.toc-master-toggle-link');
-    const list = document.querySelector('.toc-master-list');
+    const toggleLink = document.querySelector('.tbrv-toggle-link');
+    const list = document.querySelector('.tbrv-list');
 
     if (toggleLink && list) {
         toggleLink.addEventListener('click', function (e) {
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Smooth Scroll
-    const links = document.querySelectorAll('.toc-master-link');
+    const links = document.querySelectorAll('.tbrv-link');
 
     links.forEach(link => {
         link.addEventListener('click', function (e) {
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Remove active class from all
                 links.forEach(link => link.classList.remove('active'));
                 // Add to current
-                const activeLink = document.querySelector(`.toc-master-link[href="#${id}"]`);
+                const activeLink = document.querySelector(`.tbrv-link[href="#${id}"]`);
                 if (activeLink) {
                     activeLink.classList.add('active');
                 }

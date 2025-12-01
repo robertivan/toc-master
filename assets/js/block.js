@@ -5,8 +5,8 @@
     var useState = element.useState;
     var useEffect = element.useEffect;
 
-    registerBlockType('toc-master/toc', {
-        title: 'TOC Master',
+    registerBlockType('tbrv/toc', {
+        title: 'TOC Builder by RobertIvan',
         icon: 'list-view',
         category: 'widgets',
         edit: function (props) {
@@ -37,16 +37,16 @@
 
             // Render the TOC
             if (headings.length === 0) {
-                return el('div', { className: 'toc-master-container' },
+                return el('div', { className: 'tbrv-container' },
                     el('p', {}, 'Add some headings to see the Table of Contents.')
                 );
             }
 
-            return el('div', { className: 'toc-master-container' },
-                el('div', { className: 'toc-master-header' },
-                    el('span', { className: 'toc-master-title' }, 'Table of Contents')
+            return el('div', { className: 'tbrv-container' },
+                el('div', { className: 'tbrv-header' },
+                    el('span', { className: 'tbrv-title' }, 'Table of Contents')
                 ),
-                el('ul', { className: 'toc-master-list' },
+                el('ul', { className: 'tbrv-list' },
                     headings.map((heading, index) => {
                         return el('li', { key: index, style: { marginLeft: (heading.level - 2) * 20 + 'px' } },
                             el('a', { href: '#' }, heading.content.replace(/<[^>]*>?/gm, '')) // Strip HTML

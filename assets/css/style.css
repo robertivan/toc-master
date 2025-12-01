@@ -1,6 +1,6 @@
-/* TOC Master Styles */
+/* TOC Builder by RobertIvan Styles */
 
-.toc-master-container {
+.tbrv-container {
     background: #f9f9f9;
     border: 1px solid #e0e0e0;
     padding: 15px;
@@ -11,49 +11,49 @@
     max-width: 100%;
 }
 
-.toc-master-header {
+.tbrv-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
 }
 
-.toc-master-title {
+.tbrv-title {
     font-weight: bold;
     font-size: 18px;
 }
 
-.toc-master-toggle-link {
+.tbrv-toggle-link {
     font-size: 12px;
     text-decoration: none;
     color: #0073aa;
     cursor: pointer;
 }
 
-.toc-master-list {
+.tbrv-list {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.toc-master-list ul {
+.tbrv-list ul {
     list-style: none;
     margin-left: 20px;
     padding: 0;
 }
 
-.toc-master-list li {
+.tbrv-list li {
     margin-bottom: 5px;
 }
 
-.toc-master-link {
+.tbrv-link {
     text-decoration: none;
     color: #333;
     transition: color 0.2s;
 }
 
-.toc-master-link:hover,
-.toc-master-link.active {
+.tbrv-link:hover,
+.tbrv-link.active {
     color: #0073aa;
     font-weight: 500;
 }
@@ -66,7 +66,7 @@
 
 /* Mobile */
 @media (max-width: 768px) {
-    .toc-master-container {
+    .tbrv-container {
         width: 100%;
     }
 }

@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class TOC_Master_Block {
+class TBRV_Block {
 
 	public function __construct() {
 		add_action( 'init', array( $this, 'register_block' ) );
@@ -12,7 +12,7 @@ class TOC_Master_Block {
 	}
 
 	public function register_block() {
-		register_block_type( 'toc-master/toc', array(
+		register_block_type( 'tbrv/toc', array(
 			'render_callback' => array( $this, 'render_block' ),
 			'attributes'      => array(
 				'headings' => array(
@@ -25,18 +25,18 @@ class TOC_Master_Block {
 
 	public function enqueue_editor_assets() {
 		wp_enqueue_script(
-			'toc-master-block',
-			TOC_MASTER_URL . 'assets/js/block.js',
+			'tbrv-block',
+			TBRV_URL . 'assets/js/block.js',
 			array( 'wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-data' ),
-			TOC_MASTER_VERSION,
+			TBRV_VERSION,
 			true
 		);
         
         wp_enqueue_style(
-            'toc-master-style',
-            TOC_MASTER_URL . 'assets/css/style.css',
+            'tbrv-style',
+            TBRV_URL . 'assets/css/style.css',
             array(),
-            TOC_MASTER_VERSION
+            TBRV_VERSION
         );
 	}
 
@@ -51,7 +51,7 @@ class TOC_Master_Block {
         
 
         
-        $generator = new TOC_Master_Generator();
+        $generator = new TBRV_Generator();
 
         
         $content_to_parse = $post->post_content;
@@ -60,7 +60,7 @@ class TOC_Master_Block {
         
 
         
-        $instance = TOC_Auto_Generator_Ultra::get_instance();
+        $instance = TBRV_Plugin::get_instance();
 
         
 

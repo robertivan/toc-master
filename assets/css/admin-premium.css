@@ -1,5 +1,5 @@
 /* ============================================
-   TOC Master - Premium Admin Settings Styles
+   TOC Builder by RobertIvan - Premium Admin Settings Styles
    ============================================ */
 
 :root {
@@ -26,7 +26,7 @@
    Container & Layout
    ============================================ */
 
-.toc-master-settings-wrap {
+.tbrv-settings-wrap {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     padding: 0;
@@ -451,12 +451,12 @@
     font-size: 0.875rem;
 }
 
-.toc-master-preview {
+.tbrv-preview {
     position: relative;
     z-index: 1;
 }
 
-.toc-master-container {
+.tbrv-container {
     background: white;
     border-radius: 0.75rem;
     padding: 1.5rem;
@@ -464,7 +464,7 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.toc-master-header {
+.tbrv-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -473,45 +473,45 @@
     border-bottom: 2px solid var(--toc-gray-100);
 }
 
-.toc-master-title {
+.tbrv-title {
     font-weight: 700;
     font-size: 1.125rem;
     color: var(--toc-gray-900);
 }
 
-.toc-master-toggle {
+.tbrv-toggle {
     font-size: 0.875rem;
 }
 
-.toc-master-toggle-link {
+.tbrv-toggle-link {
     color: var(--toc-primary-start);
     text-decoration: none;
     font-weight: 600;
     transition: all 0.2s ease;
 }
 
-.toc-master-toggle-link:hover {
+.tbrv-toggle-link:hover {
     color: var(--toc-primary-end);
 }
 
-.toc-master-list {
+.tbrv-list {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.toc-master-list li {
+.tbrv-list li {
     margin-bottom: 0.5rem;
 }
 
-.toc-master-list ul {
+.tbrv-list ul {
     list-style: none;
     margin-left: 1.25rem;
     padding: 0;
     margin-top: 0.5rem;
 }
 
-.toc-master-link {
+.tbrv-link {
     color: var(--toc-gray-700);
     text-decoration: none;
     transition: all 0.2s ease;
@@ -520,7 +520,7 @@
     font-size: 0.9375rem;
 }
 
-.toc-master-link:hover {
+.tbrv-link:hover {
     color: var(--toc-primary-start);
     transform: translateX(4px);
 }

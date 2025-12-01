@@ -4,12 +4,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class TOC_Master_Generator {
+class TBRV_Generator {
 
 	private $options;
 
 	public function __construct() {
-		$this->options = get_option( 'toc_master_options' );
+		$this->options = get_option( 'tbrv_options' );
 		
 		// Hook into content
 		add_filter( 'the_content', array( $this, 'process_content' ), 20 );
@@ -146,18 +146,18 @@ class TOC_Master_Generator {
 			return '';
 		}
 
-		$html = '<div class="toc-master-container">';
+		$html = '<div class="tbrv-container">';
 		
 		// Header with toggle
 		$collapsible = isset( $this->options['collapsible'] ) && $this->options['collapsible'] === '1';
-		$html .= '<div class="toc-master-header">';
-		$html .= '<span class="toc-master-title">' . esc_html__( 'Table of Contents', 'toc-master' ) . '</span>';
+		$html .= '<div class="tbrv-header">';
+		$html .= '<span class="tbrv-title">' . esc_html__( 'Table of Contents', 'tbrv' ) . '</span>';
 		if ( $collapsible ) {
-			$html .= '<span class="toc-master-toggle">[<a href="#" class="toc-master-toggle-link">' . esc_html__( 'hide', 'toc-master' ) . '</a>]</span>';
+			$html .= '<span class="tbrv-toggle">[<a href="#" class="tbrv-toggle-link">' . esc_html__( 'hide', 'tbrv' ) . '</a>]</span>';
 		}
 		$html .= '</div>';
 
-		$html .= '<ul class="toc-master-list">';
+		$html .= '<ul class="tbrv-list">';
 		
 		$current_depth = 0;
 		$min_level = min( array_column( $headings, 'level' ) );
@@ -173,7 +173,7 @@ class TOC_Master_Generator {
 				$html .= str_repeat( '</ul>', $current_depth - $depth );
 			}
 
-			$html .= '<li><a href="#' . esc_attr( $heading['id'] ) . '" class="toc-master-link">' . esc_html( $heading['title'] ) . '</a></li>';
+			$html .= '<li><a href="#' . esc_attr( $heading['id'] ) . '" class="tbrv-link">' . esc_html( $heading['title'] ) . '</a></li>';
 			
 			$current_depth = $depth;
 		}

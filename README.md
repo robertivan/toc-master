@@ -1,12 +1,12 @@
-# TOC Master ⚡
+# TOC Builder by RobertIvan ⚡
 
 > An advanced Table of Contents generator plugin for WordPress with smooth scroll, Gutenberg support, and high configurability.
 
-![TOC Master Admin Interface](assets/images/screenshot-1.png)
+![TOC Builder by RobertIvan Admin Interface](assets/images/screenshot-1.png)
 
 ## 📖 Description
 
-**TOC Master** is a powerful Table of Contents plugin that automatically generates a navigation menu from your content's headings. Designed for long-form content, documentation sites, and blogs, it enhances user experience by providing easy navigation.
+**TOC Builder by RobertIvan** is a powerful Table of Contents plugin that automatically generates a navigation menu from your content's headings. Designed for long-form content, documentation sites, and blogs, it enhances user experience by providing easy navigation.
 
 It features a modern, card-based admin interface with a live preview, making configuration intuitive and instant.
 
@@ -22,7 +22,7 @@ It features a modern, card-based admin interface with a live preview, making con
 
 ## 🚀 Admin Interface
 
-TOC Master features a modern admin settings page designed for the best user experience:
+TOC Builder by RobertIvan features a modern admin settings page designed for the best user experience:
 
 *   **Live Preview**: See changes instantly as you configure settings.
 *   **Interactive Demo**: Test the collapsible functionality right in the admin.
@@ -34,19 +34,19 @@ TOC Master features a modern admin settings page designed for the best user expe
 ### Automatic Installation
 1.  Log in to your WordPress admin panel.
 2.  Navigate to **Plugins → Add New**.
-3.  Search for "TOC Master".
+3.  Search for "TOC Builder by RobertIvan".
 4.  Click **Install Now** and then **Activate**.
-5.  Navigate to **TOC Master** in the WordPress sidebar to configure.
+5.  Navigate to **TOC Builder** in the WordPress sidebar to configure.
 
 ### Manual Installation
 1.  Download the plugin ZIP file.
 2.  Upload the `toc-master` folder to the `/wp-content/plugins/` directory.
 3.  Activate the plugin through the **Plugins** menu in WordPress.
-4.  Navigate to **TOC Master** in the WordPress sidebar to configure.
+4.  Navigate to **TOC Builder** in the WordPress sidebar to configure.
 
 ## 🛠️ Usage
 
-Once activated, you can configure the plugin via the **TOC Master** menu in your WordPress dashboard.
+Once activated, you can configure the plugin via the **TOC Builder** menu in your WordPress dashboard.
 
 1.  **Enable TOC**: Toggle the automatic insertion.
 2.  **Select Headings**: Choose which levels (H1-H6) to include.
@@ -56,13 +56,13 @@ Once activated, you can configure the plugin via the **TOC Master** menu in your
 **Manual Insertion:**
 You can also manually place the TOC using:
 *   The `[toc]` shortcode anywhere in your content.
-*   The **TOC Master** block in the Gutenberg editor.
+*   The **TOC Builder** block in the Gutenberg editor.
 
 ## ❓ FAQ
 
 <details>
 <summary><strong>How does the plugin work?</strong></summary>
-TOC Master automatically scans your post or page content for HTML heading tags (H1 through H6) and generates a navigational Table of Contents. It adds unique IDs to each heading so users can jump directly to sections.
+TOC Builder by RobertIvan automatically scans your post or page content for HTML heading tags (H1 through H6) and generates a navigational Table of Contents. It adds unique IDs to each heading so users can jump directly to sections.
 </details>
 
 <details>
@@ -81,6 +81,11 @@ No. The plugin is optimized for performance with minimal CSS and JavaScript that
 </details>
 
 ## 📋 Changelog
+
+### 1.2.1
+*   **Changed**: All functions, classes, and hooks prefixed with `tbrv_` to prevent conflicts.
+*   **Changed**: All CSS classes renamed to `.tbrv-*` for consistency.
+*   **Improved**: WordPress coding standards compliance with unique prefixes throughout.
 
 ### 1.2.0
 *   **Added**: WordPress sidebar menu with icon and structure.

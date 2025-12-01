@@ -5,7 +5,7 @@ This directory contains screenshots for the plugin's README files.
 ## Current Screenshots
 
 1. **screenshot-1.png** - General Settings page showing:
-   - WordPress sidebar menu with TOC Master icon
+   - WordPress sidebar menu with TOC Builder icon
    - 2-column layout (settings on left, live preview on right)
    - Core settings card with checkboxes
    - Content settings with clickable H1-H6 heading selectors

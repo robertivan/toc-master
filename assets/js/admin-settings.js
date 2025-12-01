@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // ============================================
     // Enhanced Live Preview with Dynamic Heading Selection
     // ============================================
-    const previewContainer = document.querySelector('.toc-master-preview');
+    const previewContainer = document.querySelector('.tbrv-preview');
 
     if (previewContainer) {
         let tocContainer;
@@ -92,9 +92,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     const indent = (level - Math.min(...selectedHeadings.map(h => parseInt(h.replace('h', ''))))) * 1.25;
 
                     if (itemIndex === 0 || index === 0 || level <= lastLevel) {
-                        html += `<li style="margin-left: ${indent}rem;"><a href="#" class="toc-master-link">${item.text}</a></li>`;
+                        html += `<li style="margin-left: ${indent}rem;"><a href="#" class="tbrv-link">${item.text}</a></li>`;
                     } else {
-                        html += `<li style="margin-left: ${indent}rem;"><a href="#" class="toc-master-link">${item.text}</a></li>`;
+                        html += `<li style="margin-left: ${indent}rem;"><a href="#" class="tbrv-link">${item.text}</a></li>`;
                     }
                 });
 
@@ -109,19 +109,19 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!tocContainer) {
                 // Create initial structure
                 tocContainer = document.createElement('div');
-                tocContainer.className = 'toc-master-container';
+                tocContainer.className = 'tbrv-container';
                 tocContainer.innerHTML = `
-                    <div class="toc-master-header">
-                        <span class="toc-master-title">Table of Contents</span>
-                        <span class="toc-master-toggle">[<a href="#" class="toc-master-toggle-link">hide</a>]</span>
+                    <div class="tbrv-header">
+                        <span class="tbrv-title">Table of Contents</span>
+                        <span class="tbrv-toggle">[<a href="#" class="tbrv-toggle-link">hide</a>]</span>
                     </div>
-                    <ul class="toc-master-list"></ul>
+                    <ul class="tbrv-list"></ul>
                 `;
                 previewContainer.appendChild(tocContainer);
 
-                tocList = tocContainer.querySelector('.toc-master-list');
-                toggleButton = tocContainer.querySelector('.toc-master-toggle-link');
-                toggleLink = tocContainer.querySelector('.toc-master-toggle');
+                tocList = tocContainer.querySelector('.tbrv-list');
+                toggleButton = tocContainer.querySelector('.tbrv-toggle-link');
+                toggleLink = tocContainer.querySelector('.tbrv-toggle');
 
                 // Add toggle functionality
                 if (toggleButton && tocList) {
