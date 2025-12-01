@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Update preview based on collapsible setting
         function updateCollapsibleDisplay() {
-            const collapsibleCheckbox = document.querySelector('input[name="toc_master_options[collapsible]"]');
+            const collapsibleCheckbox = document.querySelector('input[name="tbrv_options[collapsible]"]');
             if (collapsibleCheckbox && toggleLink) {
                 if (collapsibleCheckbox.checked) {
                     toggleLink.style.display = 'inline';
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Listen for collapsible checkbox changes
-        const collapsibleCheckbox = document.querySelector('input[name="toc_master_options[collapsible]"]');
+        const collapsibleCheckbox = document.querySelector('input[name="tbrv_options[collapsible]"]');
         if (collapsibleCheckbox) {
             collapsibleCheckbox.addEventListener('change', updateCollapsibleDisplay);
         }
